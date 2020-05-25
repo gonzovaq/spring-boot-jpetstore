@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build, Teste, Validate, Deploy') {
       steps {
-        sh './gradle build'
+        sh './gradlew build'
         echo 'pull and build'
       }
     }
