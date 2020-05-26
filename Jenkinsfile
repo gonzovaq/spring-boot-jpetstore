@@ -1,10 +1,22 @@
 pipeline {
   agent any
   stages {
-    stage('Build, Teste, Validate, Deploy') {
+    stage('Build') {
+      agent any
       steps {
         sh './gradlew build'
-        echo 'pull and build'
+      }
+    }
+
+    stage('Test') {
+      steps {
+        sh './gradlew clean test'
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        sh './gradlew bootrun'
       }
     }
 
