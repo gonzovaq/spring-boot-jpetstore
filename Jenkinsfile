@@ -14,5 +14,11 @@ pipeline {
       }
     }
 
+    stage('Analyze') {
+      steps {
+        sh 'gradle sonarqube'
+      }
+    }
+
   }
 }
