@@ -4,20 +4,20 @@ pipeline {
     stage('Build') {
       agent any
       steps {
-        sh './gradlew build'
+        bat './gradlew build'
       }
     }
 
     stage('Test') {
       steps {
-        sh './gradlew clean test'
+        bat './gradlew clean test'
       }
     }
 
     stage('Analyze') {
       steps {
-        sh './gradlew tasks'
-        sh './gradlew sonarqube'
+        bat './gradlew tasks'
+        bat './gradlew sonarqube'
       }
     }
 
